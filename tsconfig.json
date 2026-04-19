@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2023",
+    "strict": true,
+    "types": ["node"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "esModuleInterop": true, 
+    "ignoreDeprecations": "6.0"
+  }
+}
