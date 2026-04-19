@@ -1,16 +1,8 @@
-import SchemaBuilder from '@pothos/core'
+import { builder } from './builder';
 
-const builder = new SchemaBuilder({})
+import '../features/tasks/task-schema.js'
 
-builder.queryType({
-  fields: (t) => ({
-    hello: t.string({
-      args: {
-        name: t.arg.string(),
-      },
-      resolve: (parent, {name}) => `hello, ${name || 'world'}`,
-    })
-  })
-})
+builder.queryType({})
+builder.mutationType({})
 
 export const schema = builder.toSchema();
