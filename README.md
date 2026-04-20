@@ -75,6 +75,15 @@ pnpm prisma migrate dev
 npx prisma migrate dev
 ```
 
+After running the prisma migrate command, the need tu run prisma generate to generate the Prisma client:
+
+```bash
+# pnpm
+pnpm prisma generate 
+# npm
+npx prisma generate
+```
+
 ### Running the Server
 
 ```bash
