@@ -4,6 +4,7 @@ export type CreateTaskArgs = {
 
 export type UpdateTaskArgs = {
   id: string
+  title?: string | null | undefined
   completed?: boolean | null | undefined
 }
 

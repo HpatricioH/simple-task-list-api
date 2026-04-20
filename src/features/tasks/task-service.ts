@@ -5,7 +5,7 @@ import { createTaskSchema, deleteTaskSchema, updateTaskSchema } from "./task-val
 
 export async function getTasks(ctx: GraphQLContext) {
   try {
-    return ctx.prisma.task.findMany()  
+    return (await ctx.prisma.task.findMany())
   } catch (error) {
     throw errorGraphQLHandler(error)
   }
@@ -43,6 +43,7 @@ export async function updateTask(ctx: GraphQLContext, input: UpdateTaskArgs) {
     return ctx.prisma.task.update({
       where: { id: validatedInput.id }, 
       data: {
+        title: validatedInput.title,
         completed: validatedInput.completed || false
       }
     })

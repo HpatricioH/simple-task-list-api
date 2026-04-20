@@ -55,6 +55,7 @@ builder.mutationField('updateTask', (t) =>
     type: Task,
     args: {
       id: t.arg.string({ required: true }),
+      title: t.arg.string(),
       completed: t.arg.boolean()
     },
     resolve: async (_parent, args, ctx: GraphQLContext) => {

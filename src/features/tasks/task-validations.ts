@@ -10,7 +10,8 @@ export const createTaskSchema = z.object({
 
 export const updateTaskSchema = z.object({
   id: z.string().min(1, 'Task id is required'),
-  completed: z.boolean()
+  title: z.string().trim().min(1).max(100).optional(),
+  completed: z.boolean().optional()
 })
 
 export const deleteTaskSchema = z.object({
