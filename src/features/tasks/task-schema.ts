@@ -31,7 +31,7 @@ builder.queryField('task', (t) =>
     id: t.arg.string({ required: true })
   }, 
   resolve: async (_parent, args, ctx: GraphQLContext) => {
-    return getTask(ctx, args.id)
+    return getTask(ctx, args)
   }
  })
 )
@@ -44,7 +44,7 @@ builder.mutationField('createTask', (t) =>
       title: t.arg.string({ required: true },)
     },
     resolve: async (_parent, args, ctx: GraphQLContext) => {
-      return createTask(ctx, args.title)
+      return createTask(ctx, args)
     }
   })
 )
@@ -71,7 +71,7 @@ builder.mutationField('deleteTask', (t) =>
       id: t.arg.string({ required: true })
     },
     resolve: async (_parent, args, ctx: GraphQLContext) => {
-      return deleteTask(ctx, args.id)
+      return deleteTask(ctx, args)
     }
   })
 )
