@@ -19,6 +19,14 @@ A basic GraphQL API server using NodeJS, TypeScript, Yoga GQL, Prisma, and Potho
 - pnpm or npm
 - A Prisma Postgres database
 
+### Clone repository
+
+```bash
+git clone https://github.com/<github user>/simple-task-list-api.git
+
+cd simple-task-list-api
+```
+
 ### Installation
 
 ```bash
@@ -27,13 +35,6 @@ pnpm install
 
 # npm
 npm install
-```
-### Clone repository
-
-```bash
-git clone https://github.com/<github user>/simple-task-list-api.git
-
-cd simple-task-list-api
 ```
 
 ### Provisioning a Database
