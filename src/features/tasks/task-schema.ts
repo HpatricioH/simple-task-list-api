@@ -13,7 +13,10 @@ Task.implement({
   })
 })
 
-// Get all Tasks
+// ---------------------------------------------------------------
+// Queries
+// ---------------------------------------------------------------
+
 builder.queryField('tasks', (t) => 
   t.field({
     type:[Task],
@@ -23,7 +26,6 @@ builder.queryField('tasks', (t) =>
   })
 )
 
-// Get a task 
 builder.queryField('task', (t) => 
  t.field({
   type: Task,
@@ -36,7 +38,11 @@ builder.queryField('task', (t) =>
  })
 )
 
-// Create Tasks
+
+// ---------------------------------------------------------------
+// Mutations
+// ---------------------------------------------------------------
+
 builder.mutationField('createTask', (t) => 
   t.field({
     type: Task,
@@ -48,8 +54,7 @@ builder.mutationField('createTask', (t) =>
     }
   })
 )
-
-// Update tasks 
+ 
 builder.mutationField('updateTask', (t) => 
   t.field({
     type: Task,
@@ -64,7 +69,6 @@ builder.mutationField('updateTask', (t) =>
   })
 )
 
-// Delete Tasks
 builder.mutationField('deleteTask', (t) =>
   t.field({
     type: Task,

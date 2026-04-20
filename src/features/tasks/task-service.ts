@@ -3,6 +3,7 @@ import type { GraphQLContext } from "../../server/context";
 import { CreateTaskArgs, TaskByIdArgs, UpdateTaskArgs } from "./task-types";
 import { createTaskSchema, deleteTaskSchema, updateTaskSchema } from "./task-validations";
 
+// Fetch all tasks 
 export async function getTasks(ctx: GraphQLContext) {
   try {
     return (await ctx.prisma.task.findMany())
@@ -11,6 +12,7 @@ export async function getTasks(ctx: GraphQLContext) {
   }
 }
 
+// Fetch a single task by ID 
 export async function getTask(ctx: GraphQLContext, input: TaskByIdArgs) {
   try {
     return ctx.prisma.task.findUnique({
@@ -21,6 +23,7 @@ export async function getTask(ctx: GraphQLContext, input: TaskByIdArgs) {
   }
 }
 
+// Create a new task as incomplete by default
 export async function createTask(ctx: GraphQLContext, input: CreateTaskArgs) {
   try {
     const validatedInput = createTaskSchema.parse(input)
@@ -36,6 +39,7 @@ export async function createTask(ctx: GraphQLContext, input: CreateTaskArgs) {
   }
 }
 
+// Update a task's title and/or completed status
 export async function updateTask(ctx: GraphQLContext, input: UpdateTaskArgs) {
   try {
     const validatedInput = updateTaskSchema.parse(input)
@@ -52,6 +56,7 @@ export async function updateTask(ctx: GraphQLContext, input: UpdateTaskArgs) {
   }
 }
 
+// Delete a task by ID 
 export async function deleteTask(ctx: GraphQLContext, input: TaskByIdArgs) {
   try {
     const validatedInput = deleteTaskSchema.parse(input)
